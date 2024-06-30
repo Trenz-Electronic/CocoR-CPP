@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 		chTrFileName = coco_string_create_char(traceFileName);
 
 		if ((parser->trace = fopen(chTrFileName, "w")) == NULL) {
-			printf("-- could not open %hs\n", chTrFileName);
+			printf("-- could not open %s\n", chTrFileName);
 			exit(1);
 		}
 
@@ -115,7 +115,7 @@ int main(int argc, char *argv[]) {
 		if (fileSize == 0) {
 			remove(chTrFileName);
 		} else {
-			printf("trace output is in %hs\n", chTrFileName);
+			printf("trace output is in %s\n", chTrFileName);
 		}
 
 		printf("%d errors detected\n", parser->errors->count);
