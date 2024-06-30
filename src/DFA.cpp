@@ -41,16 +41,16 @@ namespace Coco {
 char* DFA::Ch(int ch) {
 	char* format = new char[10];
 	if (ch < ' ' || ch >= 127 || ch == '\'' || ch == '\\')
-		coco_sprintf(format, 10, "%d\0", (int) ch);
+		coco_sprintf(format, 10, "%d", (int) ch);
 	else
-		coco_sprintf(format, 10, "'%c'\0", (char) ch);
+		coco_sprintf(format, 10, "'%c'", (char) ch);
 	return format;
 }
 
 char* DFA::ChCond(int ch) {
 	char* format = new char[20];
 	char* res = Ch(ch);
-	coco_sprintf(format, 20, "ch == %s\0", res);
+	coco_sprintf(format, 20, "ch == %s", res);
 	delete [] res;
 	return format;
 }

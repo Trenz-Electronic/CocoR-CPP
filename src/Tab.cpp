@@ -448,16 +448,10 @@ void Tab::WriteCharClasses () {
 	CharClass *c;
 	for (int i=0; i<classes->Count; i++) {
 		c = (CharClass*)((*classes)[i]);
-
-		char* format2 = coco_string_create_append(c->name, "            ");
-		char* format  = coco_string_create(format2, 0, 10);
-		coco_string_merge(format, ": ");
-		fprintf(trace, format);
+		fprintf(trace, "%s            : ", c->name),
 
 		WriteCharSet(c->set);
 		fprintf(trace, "\n");
-		coco_string_delete(format);
-		coco_string_delete(format2);
 	}
 	fprintf(trace, "\n");
 }
