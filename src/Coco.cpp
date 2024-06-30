@@ -66,13 +66,6 @@ int main(int argc, char *argv[]) {
 		else srcName = coco_string_create(argv[i]);
 	}
 
-#if defined __GNUC__
-	for (int i = 0; i < argc; ++i) {
-		coco_string_delete(argv[i]);
-	}
-	delete [] argv; argv = NULL;
-#endif
-
 	if (argc > 0 && srcName != NULL) {
 		int pos = coco_string_lastindexof(srcName, '/');
 		if (pos < 0) pos = coco_string_lastindexof(srcName, '\\');
