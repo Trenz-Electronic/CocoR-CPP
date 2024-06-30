@@ -49,7 +49,7 @@ Coco/R itself) does not fall under the GNU General Public License.
 #define coco_sprintf _snprintf
 #else
 // assume every other compiler knows sprintf
-#define coco_sprintf sprintf
+#define coco_sprintf snprintf
 #endif
 
 #define COCO_CHAR_MAX 255
