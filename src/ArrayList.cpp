@@ -46,7 +46,9 @@ void ArrayList::Add(void *value) {
 		Data[Count] = value;
 		Count++;
 	} else {
-		Capacity *= 2;
+		while (Capacity <= Count) {
+			Capacity *= 2;
+		}
 		void** newData = new void*[Capacity];
 		for (int i=0; i<Count; i++) {
 			newData[i] = Data[i];		// copy
