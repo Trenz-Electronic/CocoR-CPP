@@ -406,6 +406,7 @@ void ParserGen::WriteParser () {
 		GenErrorMsg(tErr, sym);
 	}
 
+	fprintf(gen, Generator::TEXT_AUTOMATICALLY_GENERATED);
 	g.GenCopyright();
 	g.SkipFramePart("-->begin");
 
@@ -435,6 +436,7 @@ void ParserGen::WriteParser () {
 	// Source
 	gen = g.OpenGen("Parser.cpp");
 
+	fprintf(gen, Generator::TEXT_AUTOMATICALLY_GENERATED);
 	g.GenCopyright();
 	g.SkipFramePart("-->begin");
 	g.CopyFramePart("-->namespace_open");

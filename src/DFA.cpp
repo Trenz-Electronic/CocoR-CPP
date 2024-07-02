@@ -752,6 +752,7 @@ void DFA::WriteScanner() {
 	if (dirtyDFA) MakeDeterministic();
 
 	// Header
+	fprintf(gen, Generator::TEXT_AUTOMATICALLY_GENERATED);
 	g.GenCopyright();
 	g.SkipFramePart("-->begin");
 	
@@ -784,6 +785,7 @@ void DFA::WriteScanner() {
 
 	// Source
 	gen = g.OpenGen("Scanner.cpp");
+	fprintf(gen, Generator::TEXT_AUTOMATICALLY_GENERATED);
 	g.GenCopyright();
 	g.SkipFramePart("-->begin");
 	g.CopyFramePart("-->namespace_open");
