@@ -556,7 +556,7 @@ void DFA::GenComment(Comment *com, int i) {
 	fprintf(gen, "\n");
 	fprintf(gen, "bool Scanner::Comment%d() ", i);
 	fprintf(gen, "{\n");
-	fprintf(gen, "\tint level = 1, pos0 = pos, line0 = line, col0 = col, charPos0 = charPos;\n");
+	fprintf(gen, "\t[[maybe_unused]] int level = 1, pos0 = pos, line0 = line, col0 = col, charPos0 = charPos;\n");
 	if (coco_string_length(com->start) == 1) {
 		fprintf(gen, "\tNextCh();\n");
 		GenComBody(com);

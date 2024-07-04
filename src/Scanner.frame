@@ -822,8 +822,10 @@ void Scanner::AppendVal(Token *t) {
 	t->val[tlen] = L'\0';
 }
 
+#if defined(_MSC_VER)
 #pragma warning(push)
 #pragma warning(disable: 4102)
+#endif
 Token* Scanner::NextToken() {
 	while (ch == ' ' ||
 -->scan1
@@ -851,7 +853,9 @@ Token* Scanner::NextToken() {
 	AppendVal(t);
 	return t;
 }
+#if defined(_MSC_VER)
 #pragma warning(pop)
+#endif
 
 void Scanner::SetScannerBehindT() {
 	buffer->SetPos(t->pos);
